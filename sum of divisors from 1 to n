@@ -1,0 +1,32 @@
+idea->     a number n has factors from 1 to n and factors would be those that leave the remainder 0 on dividing n like 6 has 2 as a factor meaning 6%2=0
+
+approach -> 
+             since we have to find the sum of the factors of the numbers from 1 to n we have to make two loops such that first loop is for including all the numbers from 1 to n 
+and the second loop is for finding the factors for each number in the loop and since for each no: the factors would be in the range from 1 to that no: and so
+the loop conditions start from j=1 to j<=i and so we find find factors by i%j and if they are a factor we use them to find as sum=sum +j;
+
+code->
+ 
+ int sumOfAllDivisors(int n)
+{
+	// Write your code here.
+	int i;
+	//int divisors =0;
+    int	 rem=0 ,sum=0;
+	for(i=1;i<=n;i++)
+	{
+		
+			for(int j=1;j<=i;j++)
+			{
+			int rem=i%j;
+			
+             if (rem == 0) 
+						{
+                     
+						 sum=sum+j;
+                        }
+
+                }
+        }
+		return sum;
+}

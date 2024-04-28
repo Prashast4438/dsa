@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int i=1;
+void print(int n)
+{ 
+    
+  if(i>n)
+  {
+    return ;
+    }
+    else
+    { 
+        cout<<"\t"<<i;
+        i++;
+        print(n);
+    }
+
+}
+int main()
+{
+    int n;
+    cout<<"enter till where u wanna print"<<endl;
+    cin>>n;
+    print(n);
+    return 0;
+}

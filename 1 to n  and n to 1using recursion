@@ -2,6 +2,7 @@
 using namespace std;
 int i=1;
 void print(int n)
+
 { 
     
   if(i>n)
@@ -16,11 +17,24 @@ void print(int n)
     }
 
 }
+void show(int n)
+{
+    if(n<1)
+    {
+        return;
+    }
+    else{
+    cout<<"\t"<<n;
+    show(n-1);
+    }
+}
 int main()
 {
     int n;
     cout<<"enter till where u wanna print"<<endl;
     cin>>n;
     print(n);
+    cout<<endl;
+    show(n);
     return 0;
 }

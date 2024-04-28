@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+void name (int n,string s);
+int n;
+int main ()
+{
+    string s;
+    cout<<"enter the name"<<endl;
+    cin>>s;
+    cout<<"enter the number of times"<<endl;
+    cin>>n;
+    name(n,s);
+
+}
+void name(int n,string s)
+{
+    if(n<1)
+    return;
+    else
+    {
+        cout<<"\t"<<s;
+        name(n-1,s);
+    }
+}

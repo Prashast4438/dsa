@@ -1,0 +1,27 @@
+idea and approach - we compare the adjacent elements with each other and store the bigger element in a variable temp so in this way we compare the temp with the next number 
+                    and the bigger of two gets updated or remains in temp   (between two numbers x and y , x is bigger and the third number z 
+                     is bigger than x then z is automtatically bigger than x)       and this goes till the last element and finally the final temp is returned.
+                      
+
+
+code -
+
+#include <bits/stdc++.h> 
+int largestElement(vector<int> &arr, int n) {
+    // Write your code here.
+    int temp=arr[0];
+   
+    for(int i=1;i<=n-1;i++)
+    { 
+        
+        if(temp>arr[i])
+        {
+            continue;
+        }
+          else 
+          temp=arr[i];
+    }
+    return temp;
+}
+
+time complexity -O(N) since the loop is run for n times .(n is no: of elements in the array)

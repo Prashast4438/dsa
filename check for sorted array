@@ -1,0 +1,25 @@
+idea and approach - the idea is to compare the adjacent elements like the if there are three elements left, middle , right then left<=middle and middle<=right
+and if that is true then we keep a counter variable to see till how many elemnts its getting right , since we are checking three numbers together the iterations would start
+from 0 but will go on till n-3 since if it goes past that there wont be anymore elements to compare with and in this way we will have to iterate less in number so if the condition is
+true the count will increase and if it is equal to n-2 since sum from 0 to n-3 is n-2 the array is sorted therefore it will give me 1 or else 0;
+
+code-
+int isSorted(int n, vector<int> a) {
+    // Write your code here
+    int count=0;
+    for(int i=0;i<n-2;i++)
+    {
+        if((a[i]<=a[i+1])&&(a[i+1]<=a[i+2]))
+        {
+            count++;
+        }
+        
+    }
+    if(count==n-2)
+    {
+        return 1;
+        
+    }
+    else return 0;
+}
+time complexity 0(n-2)

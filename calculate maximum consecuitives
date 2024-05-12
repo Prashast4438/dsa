@@ -3,11 +3,6 @@ idea -   basically the idea was whenever there are consecutive 1s store the numb
 why created a count variable which  when 1 would come gets incremented by 1 and store that count vaue in one index of a vector so as count++ happened
 the value in new  index increased .now when 0 would come the count value would get initialised to zero again and the index would get incremented so for 
 the new set  of conbsecutive 1s there is a new place in the result vector.
-
-
-
-
-
 class Solution {
 public:
     int findMaxConsecutiveOnes(vector<int>& nums) {
@@ -41,5 +36,37 @@ public:
 
         }
         return max;
+    }
+};
+
+
+optimal solution->
+idea - initialise the count=0 and max count=0; when 1 comes count gets incremented max value also gets updated whenever 0 comes count value gets initialised to 0 
+again and so now when 1 comes count value gets incremented but since max contains the value of count that was before 0 come it is bigger than count so max remains same 
+and when count becomes more than max max value gets updated and at end of array max is returned. 
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+        int count=0 ;
+        int max=0 ;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]==1)
+            {
+                count++;
+                if(count>max)
+                {
+                    max=count;
+                }
+            }
+              else
+            {
+                
+                count=0;
+                
+            }
+        }
+        return max;
+        
     }
 };

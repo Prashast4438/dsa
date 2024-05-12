@@ -1,3 +1,13 @@
+idea -   basically the idea was whenever there are consecutive 1s store the number of them in a place and whenever 0 comes break the count and 
+         initialize a new place to store the new set of consecutive 1s and when the array gets over compare the numbers of 1s stored in those places so thats 
+why created a count variable which  when 1 would come gets incremented by 1 and store that count vaue in one index of a vector so as count++ happened
+the value in new  index increased .now when 0 would come the count value would get initialised to zero again and the index would get incremented so for 
+the new set  of conbsecutive 1s there is a new place in the result vector.
+
+
+
+
+
 class Solution {
 public:
     int findMaxConsecutiveOnes(vector<int>& nums) {

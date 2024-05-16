@@ -10,7 +10,7 @@ public:
             {
                 return mid;
             }
-            else if(mid*mid>=x)
+            else if(mid*mid>x)
                 {
                     high=mid-1;
                 }

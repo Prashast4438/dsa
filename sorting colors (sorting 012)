@@ -1,0 +1,33 @@
+
+Dutch national flag algorithm  0 to low-1 is all 0; low to mid-1 is all 1 ; mid to high = unsorted ; high+1 to n-1 is all 2    so if we sort the unsorted portion then its all done.
+
+
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int low=0;int mid=0;
+       int high= nums.size()-1;
+       int i;
+       while(mid<=high)
+       {
+        if(nums[mid]==0)
+        {
+            swap(nums[low],nums[mid]);
+            low++;
+            mid++;
+        }
+        else if(nums[mid]==2)
+        {
+            swap(nums[high],nums[mid]);
+            high--;
+        }
+        else{
+            mid++;
+        }
+       
+       }
+
+        
+    }
+};

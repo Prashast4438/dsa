@@ -2,6 +2,10 @@
 Dutch national flag algorithm  0 to low-1 is all 0; low to mid-1 is all 1 ; mid to high = unsorted ; high+1 to n-1 is all 2    so if we sort the unsorted portion then its all done.
 
 
+note- the key reason for not incrementing mid immediately when it points to 2 is to ensure that the newly swapped element from high to mid gets processed correctly.
+Incrementing mid without checking this element could lead to incorrect sorting and when mid==0 we are swapping with low which we know is gonna be 1 only but when we swap with high 
+it can be anything (0,1,2) as 2 is from high+1 to n-1 and unsorted is from mid to high.
+
 
 class Solution {
 public:

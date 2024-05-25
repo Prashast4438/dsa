@@ -1,0 +1,26 @@
+Using Moore's Voting ALgorithm ->
+
+
+
+
+Using Hash map->
+
+class Solution {
+
+
+public:
+    int majorityElement(vector<int>& nums) {
+        map<int,int> v;
+        for(int i=0;i<nums.size();i++)
+        {
+            v[nums[i]]++;   //putting the element and its count as key and value pair respectively
+        }
+        for(auto it: v)
+        {
+            if (it.second>(nums.size()/2))
+            return it.first;
+        }
+        return -1;
+        
+    }
+};

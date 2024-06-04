@@ -1,0 +1,19 @@
+
+
+idea - the maximum probit would be genrated when its gets bought  at the minimum so basically for every i we see the before ones(that is i-1;i-2;i-3...) 
+and select the minimum out of them and then find the profit , if the profit is more than max we update the value and do it till the end of the array 
+therefore the time complexity is O(n) 
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int mini=INT_MAX;
+        int maxiprofit=0;
+        int i;
+        for(i=0;i<prices.size();i++)
+        {
+            mini=min(mini,prices[i]);
+            maxiprofit=max(maxiprofit,prices[i]-mini);
+        }
+        return maxiprofit;
+    }
+};

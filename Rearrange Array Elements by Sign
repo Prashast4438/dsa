@@ -1,0 +1,28 @@
+idea - since the first positin has to be positive and second position as negative we assign 0 and 1 index to them respedctively then search the array for positive or negative numbers 
+       and keep assigning them and incrementing the positive and negative index by +2 since they have to come alternatively.
+
+
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        vector<int>output(nums.size(),0);
+        int posindex=0;
+        int negindex=1;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]<0)
+            {
+                output[negindex]=nums[i];
+                negindex=negindex+2;
+            }
+            else{
+            output[posindex]=nums[i];
+            posindex=posindex+2;
+            }
+            
+        }
+        return output;
+        
+    }
+};

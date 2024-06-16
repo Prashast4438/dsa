@@ -1,0 +1,27 @@
+#include <bits/stdc++.h> 
+int getLongestSubarray(vector<int>& nums, int k){
+    // Write your code here
+map<long long ,int> presum;
+long long sum=0;
+int diff;
+int maxlength=0;
+for(int i=0;i<nums.size();i++)
+{
+    sum=sum+nums[i];
+    if(sum==k)
+    {
+       maxlength=max(maxlength,i+1);
+    }
+    diff=sum-k;
+    if(presum.find(diff)!=presum.end())
+    {
+        int len=i-presum[diff];
+        maxlength=max(maxlength,len);
+    }
+    if (presum.find(sum) == presum.end())
+     {
+        presum[sum] = i;
+    }
+}
+return maxlength;
+}

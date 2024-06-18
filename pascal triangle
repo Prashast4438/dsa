@@ -1,0 +1,33 @@
+Time Complexity: O(n2), where n = number of rows(given).
+Reason: We are generating a row for each single row. The number of rows is n. And generating an entire row takes O(n) time complexity.
+
+Space Complexity: In this case, we are only using space to store the answer. That is why space complexity can still be considered as O(1).
+
+class Solution {
+public:
+vector<int>generaterow(int row)
+{ 
+    vector <int>rowgenerated;
+    rowgenerated.push_back(1);
+    long long ans =1;
+    for(int col=1;col<row;col++)
+    {
+        ans=ans*(row-col);
+        ans=ans/col;
+       rowgenerated.push_back(ans);
+    }
+   
+    //rowgenerated.push_back(1);
+    return rowgenerated;
+    
+}
+    vector<vector<int>> generate(int numRows) {
+        vector <vector<int>>ans;
+        for(int i=1;i<=numRows;i++)
+        {
+          ans.push_back(generaterow(i));
+        }
+        return ans;
+        
+    }
+};

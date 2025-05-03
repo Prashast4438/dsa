@@ -59,7 +59,7 @@ public:
                 max = max - 1;
             }
             else {
-                // A '*' could be ')': low-1, or '(' : high+1
+                // A '*' could be ')': min-1, or '(' : max+1
                 min = min - 1;
                 max = max + 1;
             }
@@ -69,13 +69,13 @@ public:
                 return false;
             }
             
-            // low (min) can't go below 0: treat extra '*' as empty
+            //  (min) can't go below 0: treat extra '*' as empty
             if (min < 0) {
                 min = 0;
             }
         }
 
-        // If min (low) is zero, there's some assignment of '*' to balance all '('
+        // If min  is zero, there's some assignment of '*' to balance all '('
         return (min == 0);
     }
 };
